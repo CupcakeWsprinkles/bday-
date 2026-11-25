@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Bday Emil</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Verdana,sans-serif;
+}
+
+body{
+width:100vw;
+height:100vh;
+overflow:hidden;
+
+background:url("mei-cat.gif") center center/cover no-repeat fixed;
+
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.window{
+width:min(90vw,700px);
+min-height:250px;
+
+background:#ececec;
+border:3px solid black;
+
+box-shadow:10px 10px 0 rgba(0,0,0,.4);
+
+display:flex;
+flex-direction:column;
+}
+
+.titlebar{
+height:40px;
+
+background:linear-gradient(
+90deg,
+#2048aa,
+#638eff
+);
+
+color:white;
+
+display:flex;
+align-items:center;
+
+padding:0 12px;
+
+font-weight:bold;
+font-size:16px;
+}
+
+.content{
+padding:35px;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+gap:25px;
+}
+
+.message{
+font-size:24px;
+text-align:center;
+line-height:1.4;
+}
+
+.buttons{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+button{
+padding:12px 18px;
+
+border:2px solid black;
+background:white;
+
+font-size:16px;
+cursor:pointer;
+
+transition:.15s;
+}
+
+button:hover{
+transform:translateY(-2px);
+}
+
+button:disabled{
+cursor:not-allowed;
+opacity:.4;
+}
+
+.gif-screen{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:20px;
+}
+
+.gif-screen img{
+max-width:80vw;
+max-height:60vh;
+
+border:4px solid black;
+}
+
+@media(max-width:600px){
+
+.message{
+font-size:20px;
+}
+
+button{
+font-size:14px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div id="app"></div>
+
+<script>
+
+let screamUsed = false;
+
+function renderWindow(text, buttons){
+
+const app = document.getElementById("app");
+
+app.innerHTML = `
+<div class="window">
+<div class="titlebar">Birthday.exe</div>
+
+<div class="content">
+
+<div class="message">
+${text}
+</div>
+
+<div class="buttons">
+${buttons}
+</div>
+
+</div>
+</div>
+`;
+
+}
+
+function start(){
+
+renderWindow(
+"HAPPY BDAY EMIL",
+
+`
+<button onclick="sup1()">
+WOAH hi.
+</button>
+`
+);
+
+}
+
+function sup1(){
+
+renderWindow(
+"sup.",
+
+`
+<button onclick="sup2()">
+continue
+</button>
+`
+);
+
+}
+
+function sup2(){
+
+renderWindow(
+"Are u excited about ur bday?",
+
+`
+<button onclick="bdayYes()">
+YESYES
+</button>
+
+<button disabled>
+no
+</button>
+`
+);
+
+}
+
+function bdayYes(){
+
+renderWindow(
+"Are u excited to finally grow a cm?",
+
+`
+<button onclick="growYes()">
+yes im one cm Closer to reaching ur height (impossible)
+</button>
+
+<button disabled>
+im taller
+</button>
+`
+);
+
+}
+
+function growYes(){
+
+renderWindow(
+"Happy abt turning from pre-fetus to newborn?",
+
+`
+<button onclick="route11()">
+yep im just a bebeh i
+</button>
+
+<button onclick="route12()">
+LET ME DECIDE OML
+</button>
+`
+);
+
+}
+
+function route11(){
+
+renderWindow(
+"Gah right so cute.",
+
+`
+<button onclick="route111()">
+right.
+</button>
+
+<button onclick="route112()">
+tight.
+</button>
+`
+);
+
+}
+
+function route111(){
+
+renderWindow(
+"lets Play rock paper or scissors. Ready?",
+
+`
+<button onclick="badEnd()">
+ROCK
+</button>
+
+<button onclick="badEnd()">
+PAPER
+</button>
+
+<button onclick="winPath()">
+or ahhah
+</button>
+
+<button onclick="badEnd()">
+SCISSORS
+</button>
+`
+);
+
+}
+
+function badEnd(){
+
+renderWindow(
+"U lost!!!!hahahahcoughcoUGHGZG",
+
+`
+<button onclick="route111()">
+bad ending: i choked. redo.
+</button>
+`
+);
+
+}
+
+function winPath(){
+
+renderWindow(
+"U won!!!! go to the end of the link.",
+
+`
+<button onclick="ending()">
+goes
+</button>
+
+<button onclick="fightPath()">
+fights u???
+</button>
+`
+);
+
+}
+
+function fightPath(){
+
+renderWindow(
+"u lost the fight. redo or spend 55 gems??",
+
+`
+<button onclick="winPath()">
+redoes
+</button>
+
+<button disabled>
+spend (too poor sry xx)
+</button>
+`
+);
+
+}
+
+function route112(){
+
+renderWindow(
+"BYE DONT CHOOSE THE TYPO???",
+
+`
+<button onclick="route121()">
+THEN DONT MAKE IT AN OPTION
+</button>
+
+<button onclick="route122()">
+im tight tho i
+</button>
+`
+);
+
+}
+
+function route121(){
+
+route12();
+
+}
+
+function route122(){
+
+renderWindow(
+"oh oh my god no im so sorry yeah no i completely understand.",
+
+`
+<button onclick="route122b()">
+tanks
+</button>
+`
+);
+
+}
+
+function route122b(){
+
+renderWindow(
+"anyway i",
+
+`
+<button onclick="ending()">
+bring me to the end of this link
+</button>
+`
+);
+
+}
+
+function route12(){
+
+renderWindow(
+"LEAVE ME ALONE THIS IS MY WEBSITE",
+
+`
+<button onclick="route21()">
+NO THIS SUCKS
+</button>
+
+<button ${screamUsed ? "disabled" : ""} onclick="route22()">
+AAAAAA
+</button>
+`
+);
+
+}
+
+function route22(){
+
+screamUsed = true;
+
+renderWindow(
+"STOP SCREAMING go back to the other option.",
+
+`
+<button onclick="route12()">
+ok sorry.
+</button>
+`
+);
+
+}
+
+function route21(){
+
+renderWindow(
+"NO IT DOESNT watch this",
+
+`
+<button onclick="showGif()">
+??
+</button>
+`
+);
+
+}
+
+function showGif(){
+
+const app = document.getElementById("app");
+
+app.innerHTML = `
+
+<div class="window">
+
+<div class="titlebar">
+Birthday.exe
+</div>
+
+<div class="content">
+
+<div class='gif-screen'>
+
+<img src="fire.gif" alt="gif">
+
+<button onclick="ending()">
+?!?!
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+function ending(){
+
+renderWindow(
+
+`deer Emil, i wish u a great super duper birthday. youre so awesome and kind and funni and aura and stuff and im realli happi that we know each other. today is ur special day and i hope u celebrate it well !!!! i wish i could give u an actual gift not a digital thing i coded :sob: but i hope u like this too ! you is kind you is important and sososoosososososo cool...`,
+
+`
+<button onclick="start()">
+play again
+</button>
+`
+);
+
+}
+
+start();
+
+</script>
+</body>
+</html>
